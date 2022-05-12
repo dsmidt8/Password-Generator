@@ -18,6 +18,7 @@ function writePassword() {
       console.log("promptLength", promptLength);
   } else {
     window.alert("you have not picked a valid number, try again"); 
+    writePassword ()
   }
   //How to reset if number not valid????
 
@@ -53,11 +54,19 @@ function writePassword() {
     window.alert("Special Characters NOT selected");
   }
 
-      
-      
+  var inputConfirm = window.confirm("Are the Listed variables correct" + confirmLowercase + confirmUppercase + confirmNumeric + confirmSpecial);
+  if (inputConfirm){}
+  else {
+    writePassword()
+  }
+  
 
 
-  var password = generatePassword();
+  
+
+
+  //Does including these take into consideration if they are in console or if they are just listed as variable
+  var password = generatePassword(promptLength, confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecial);
   var passwordText = document.querySelector("#password");
 
   
@@ -71,8 +80,6 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-
-
 //Button triggers propmts
 //prompt for length of 8 to 126 characters
 //character types prompt includes: 
@@ -80,7 +87,25 @@ generateBtn.addEventListener("click", writePassword);
 //  *uppercase, 
 //  *numeric,
 //  *special characters
+// **DONE** YAYYYY
 
-//input should be validated and atleast 1 character must be chosen
+//*****password generation*****
+
+    // generator reads inputs
+    // generator reads length
+    //password is put into page / in an alert
+
+//???input should be validated and atleast 1 character must be chosen???
+
+
+
+
+
 //password generated matches selected criteria
 // password in alert or written on page
+
+
+
+
+
+
