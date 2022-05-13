@@ -66,40 +66,53 @@ function writePassword() {
 
 
   //object with all options gathered (oject key worked with TA)
-  let passwordOptions = {
-    ifpasswordLength: promptLength,
-    hasLowercase: confirmLowercase,
-    hasUppercase: confirmUppercase,
-    hasNumeric: confirmNumeric,
-    hasSpecial: confirmSpecial,
-  }
+  //let passwordOptions = {
+    //passwordLength: promptLength,
+   // confirmLowercase: lowerCase,
+    //confirmUppercase: upperCase,
+    //confirmNumeric: numeric ,
+    //confirmSpecial: specialCharacter,
+  //}
   
+
+
+  //My attempt at making options work based on example : (https://github.com/TiffanyCasey/Password-Generator/blob/master/script.js)
+  let passwordOptions = []
+
+  if (confirmLowercase) { 
+    passwordOptions = passwordOptions.concat(lowerCase)
+  }
+
+  if (confirmUppercase) {
+    passwordOptions = passwordOptions.concat(upperCase)
+  }
+
+  if(confirmNumeric){
+    passwordOptions = passwordOptions.concat(numeric)
+  }
+
+  if(confirmSpecial){
+    passwordOptions = passwordOptions.concat(specialCharacter)
+  }
+
 
 
   console.log(passwordOptions);
-
-
-
-
-
-  
-
-
-
-
 
     //random password generation based on selected parameters (https://www.programiz.com/javascript/examples/generate-random-strings : website used as example)  *****why do you use empty quotes and how do you use a for loop******
     let randomPassword= ""
     for (let i = 0; i < promptLength; i++){
       randomPassword= randomPassword + passwordOptions[Math.floor(Math.random() * promptLength)];
+      
     }
 
+    ///???options logged as undefined????
     console.log(randomPassword);
 
 
 
   //Does including these take into consideration if they are in console or if they are just listed as variable 
-  var password = generatePassword(promptLength, confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecial);
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
 
@@ -129,7 +142,7 @@ generateBtn.addEventListener("click", writePassword);
 //*****password generation*****
 
     // generator reads inputs
-    // generator reads length
+    // generator reads length ***got it***
     //password is put into page / in an alert
 
 //???input should be validated and atleast 1 character must be chosen???
