@@ -62,22 +62,15 @@ function writePassword() {
   if (confirmLowercase === false && confirmUppercase === false && confirmNumeric === false && confirmSpecial === false){
     window.alert("Please Select a valid option");
     writePassword()
+    return;
   }
 
 
-  //object with all options gathered (oject key worked with TA)
-  //let passwordOptions = {
-    //passwordLength: promptLength,
-   // confirmLowercase: lowerCase,
-    //confirmUppercase: upperCase,
-    //confirmNumeric: numeric ,
-    //confirmSpecial: specialCharacter,
-  //}
   
 
 
-  //My attempt at making options work based on example : (https://github.com/TiffanyCasey/Password-Generator/blob/master/script.js)
-  let passwordOptions = []
+ //defines what password is based on user selection
+    let passwordOptions = []
 
   if (confirmLowercase) { 
     passwordOptions = passwordOptions.concat(lowerCase)
@@ -97,28 +90,29 @@ function writePassword() {
 
 
 
-  console.log(passwordOptions);
+    console.log(passwordOptions)
 
     //random password generation based on selected parameters (https://www.programiz.com/javascript/examples/generate-random-strings : website used as example)  *****why do you use empty quotes and how do you use a for loop******
     let randomPassword= ""
+
     for (let i = 0; i < promptLength; i++){
-      randomPassword= randomPassword + passwordOptions[Math.floor(Math.random() * promptLength)];
+      randomPassword= randomPassword + passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
       
     }
-
+    
     ///???options logged as undefined????
     console.log(randomPassword);
 
 
 
   //Does including these take into consideration if they are in console or if they are just listed as variable 
-  var password = generatePassword();
+  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
 
 
 
-  passwordText.value = password;
+  passwordText.value = randomPassword;
 
 }
 
