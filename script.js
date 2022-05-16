@@ -9,7 +9,6 @@ let upperCase = ["A", "B", "C",  "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 let specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 let numeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-//***look up key:value meaning */
 
 
 // Write password to the #password input
@@ -58,7 +57,9 @@ function writePassword() {
     console.log("Special Characters NOT selected");
   }
 
-  //If no valid option selection, resets password prompts
+
+
+  //password validation, 1 option must be selected.
   if (confirmLowercase === false && confirmUppercase === false && confirmNumeric === false && confirmSpecial === false){
     window.alert("Please Select a valid option");
     writePassword()
@@ -92,7 +93,7 @@ function writePassword() {
 
     console.log(passwordOptions)
 
-    //random password generation based on selected parameters (https://www.programiz.com/javascript/examples/generate-random-strings : website used as example)  *****why do you use empty quotes and how do you use a for loop******
+    //random password generation based on selected parameters
     let randomPassword= ""
 
     for (let i = 0; i < promptLength; i++){
@@ -100,18 +101,11 @@ function writePassword() {
       
     }
     
-    ///???options logged as undefined????
+  
     console.log(randomPassword);
 
-
-
-  //Does including these take into consideration if they are in console or if they are just listed as variable 
-  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-
-
-
+  
   passwordText.value = randomPassword;
 
 }
@@ -124,31 +118,9 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-//Button triggers propmts
-//prompt for length of 8 to 126 characters
-//character types prompt includes: 
-//  *lowercase, 
-//  *uppercase, 
-//  *numeric,
-//  *special characters
-// **DONE** YAYYYY
-
-//*****password generation*****
-
-    // generator reads inputs
-    // generator reads length ***got it***
-    //password is put into page / in an alert
-
-//???input should be validated and atleast 1 character must be chosen???
 
 
-//confirm if selected variables are true
 
-//key is to store values in passOptions variable and use that object to generate password and create text element to show password
-
-
-//password generated matches selected criteria
-// password in alert or written on page
 
 
 
