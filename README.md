@@ -3,7 +3,7 @@
 [See the deployment](https://dsmidt8.github.io/Password-Generator/)  
 [Explore the code](https://github.com/dsmidt8/Password-Generator)
 
-<img src="./assets/03-javascript-homework-demo.png" />
+![03-javascript-homework-demo](https://user-images.githubusercontent.com/103525583/168696438-63dec6eb-197b-48e7-9566-c51c61195c82.png)
 
 
 ---
